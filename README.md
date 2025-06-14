@@ -26,7 +26,7 @@ Uma aplicação web moderna e interativa para aprender algoritmos fundamentais d
 ### Padrões de Código Utilizados
 
 #### 1. **Component-Based Architecture**
-\`\`\`
+```
 components/
 ├── navigation.tsx          # Navegação lateral esquerda
 ├── visualization.tsx       # Área central de visualização
@@ -35,19 +35,19 @@ components/
 ├── graph-visualization.tsx
 ├── tree-visualization.tsx
 └── dp-visualization.tsx
-\`\`\`
+```
 
 #### 2. **Custom Hooks Pattern**
-\`\`\`
+```
 hooks/
 ├── use-sorting-algorithms.ts   # Lógica de algoritmos de ordenação
 ├── use-graph-algorithms.ts     # Algoritmos de grafos (BFS, DFS, Dijkstra)
 ├── use-tree-algorithms.ts      # Algoritmos de árvores
 └── use-dp-algorithms.ts        # Programação dinâmica
-\`\`\`
+```
 
 #### 3. **Context + Reducer Pattern**
-\`\`\`typescript
+```
 // Estado global centralizado
 interface AppState {
   currentTopic: string | null
@@ -64,7 +64,7 @@ type AppAction =
   | { type: "SET_TOPIC"; payload: string }
   | { type: "SET_ANIMATING"; payload: boolean }
   // ...
-\`\`\`
+```
 
 #### 4. **Separation of Concerns**
 - **Componentes**: Apenas renderização e interação
@@ -75,7 +75,7 @@ type AppAction =
 ### Técnicas de Código Avançadas
 
 #### 1. **Async/Await com Visualização**
-\`\`\`typescript
+```
 const bubbleSort = useCallback(async () => {
   for (let i = 0; i < n - 1; i++) {
     for (let j = 0; j < n - i - 1; j++) {
@@ -89,10 +89,10 @@ const bubbleSort = useCallback(async () => {
     }
   }
 }, [dependencies])
-\`\`\`
+```
 
 #### 2. **Dynamic Component Rendering**
-\`\`\`typescript
+```
 const renderVisualization = () => {
   if (state.currentTopic?.includes("sort")) {
     return <SortingVisualization />
@@ -102,10 +102,10 @@ const renderVisualization = () => {
   }
   // ...
 }
-\`\`\`
+```
 
 #### 3. **SVG Programático**
-\`\`\`typescript
+```
 const renderGraph = (topic: string, container: HTMLElement) => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
   
@@ -116,7 +116,7 @@ const renderGraph = (topic: string, container: HTMLElement) => {
     circle.addEventListener("click", () => startAlgorithm(node.id))
   })
 }
-\`\`\`
+```
 
 #### 4. **Performance Optimization**
 - **useCallback** para funções custosas
@@ -212,53 +212,53 @@ const renderGraph = (topic: string, container: HTMLElement) => {
 ### Passo a Passo
 
 #### 1. **Clone o Repositório**
-\`\`\`bash
+```
 git clone https://github.com/seu-usuario/algolearn-platform.git
 cd algolearn-platform
-\`\`\`
+```
 
 #### 2. **Instale as Dependências**
-\`\`\`bash
+```
 # Com npm
 npm install
 
 # Ou com yarn
 yarn install
-\`\`\`
+```
 
 #### 3. **Execute o Projeto**
-\`\`\`bash
+```
 # Modo desenvolvimento
 npm run dev
 
 # Ou com yarn
 yarn dev
-\`\`\`
+```
 
 #### 4. **Acesse a Aplicação**
 Abra seu navegador e acesse: \`http://localhost:3000\`
 
 #### 5. **Build para Produção (Opcional)**
-\`\`\`bash
+```
 # Build
 npm run build
 
 # Iniciar produção
 npm start
-\`\`\`
+```
 
 ### Comandos Disponíveis
 
-\`\`\`bash
+```
 npm run dev          # Desenvolvimento
 npm run build        # Build para produção
 npm run start        # Servidor de produção
 npm run lint         # Verificação de código
 npm run type-check   # Verificação de tipos
-\`\`\`
+```
 
 ### Estrutura de Pastas
-\`\`\`
+```
 algolearn-platform/
 ├── app/                    # App Router do Next.js
 │   ├── page.tsx           # Página principal
@@ -280,28 +280,28 @@ algolearn-platform/
 ├── lib/                  # Utilitários
 │   └── utils.ts
 └── public/               # Arquivos estáticos
-\`\`\`
+```
 
 ### Troubleshooting
 
 #### Problema: Erro de dependências
 **Solução**: 
-\`\`\`bash
+```
 rm -rf node_modules package-lock.json
 npm install
-\`\`\`
+```
 
 #### Problema: Porta 3000 ocupada
 **Solução**: 
-\`\`\`bash
+```
 npm run dev -- -p 3001
-\`\`\`
+```
 
 #### Problema: Erro de TypeScript
 **Solução**: 
-\`\`\`bash
+```
 npm run type-check
-\`\`\`
+```
 
 ## 🤝 Contribuição
 
